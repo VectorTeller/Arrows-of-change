@@ -32,7 +32,7 @@ The foundation of this analysis is a composite dataset built from four distinct 
 This phase focused on uncovering the underlying patterns in the data and creating high-impact static visualizations suitable for reports and presentations.
 
 *   **Methodology: Principal Component Analysis (PCA)**
-    *   To understand the complex relationships between the four correlated indicators, PCA was applied. This statistical technique reduces the dimensionality of the data, summarizing the four variables into two new, synthetic axes (Principal Components) that collectively explain over 90% of the original variance.
+    *   To understand the complex relationships between the four correlated indicators, PCA was applied. This statistical technique reduces the dimensionality of the data, summarizing the four variables into two new, synthetic axes (Principal Components) that collectively explain over 90 % of the original variance.
     *   **PC1 (Horizontal Axis):** Was interpreted as an "Overall Development & Openness" index. A high score indicates high human development, low corruption, and high freedom.
     *   **PC2 (Vertical Axis):** Was interpreted as a "Developmental Emphasis" index, contrasting institutional strength with economic/technological focus.
 
