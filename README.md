@@ -3,6 +3,7 @@
 
 ### 🚀 Live Demonstration
 
+
 Try the interactive Shiny app here:  
-👉 https://vectorvoyager.shinyapps.io/arrows_of_change/
+👉 **[Click here to launch the app](https://vectorvoyager.shinyapps.io/arrows_of_change/)**
 
