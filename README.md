@@ -2,7 +2,7 @@
 
 ## National Dynamics in Development, Freedom, Political Integrity, and Digital Inclusion (2013–2023)
 
-This repository contains the complete workflow for an analysis of national development trends over a decade. The project progresses from raw data collection and cleaning to advanced statistical analysis, the creation of high-quality static infographics, and finally, the deployment of a fully interactive web application built with R Shiny.
+This repository contains the complete workflow for an analysis of national development trends over a decade. The project progresses from raw data collection and cleaning to advanced statistical analysis, the creation of a static infographics, and finally, the deployment of a fully interactive web application built with R Shiny.
 
 ---
 
