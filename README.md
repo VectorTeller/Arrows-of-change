@@ -4,5 +4,5 @@
 ## 🌐 Live App
 
 Try the interactive Shiny app here:  
-👉 [https://metacim.shinyapps.io/shiny/](https://metacim.shinyapps.io/shiny/)
+👉 https://vectorvoyager.shinyapps.io/arrows_of_change/
 
