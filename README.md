@@ -24,7 +24,7 @@ The foundation of this analysis is a composite dataset built from four distinct 
     1.  **Load and Filter Data:** Each dataset was loaded into R and filtered to the **2013-2023** period.
     2.  **Standardize Country Names:** A custom R function was developed to standardize country names across all datasets. This function used a combination of manual mapping and string detection to **recode** different naming conventions to a single, consistent identifier for each nation, ensuring that each country could be **equally represented**.
     3.  **Merge with Left Joins:** The standardized datasets were sequentially merged into a master dataframe using the `left_join` operation from `dplyr` package, matching observations by country and year.
-    4.  **Ensure Complete Coverage:** The merged data was then filtered to include **only countries with complete data coverage** for all key indicators across all 11 years. This step creates a balanced panel, which is crucial for accurate longitudinal analysis.
+    4.  **Ensure Complete Coverage:** The merged data was then filtered to include **only countries with complete data coverage** for all key indicators across all 11 years.
     5.  **Finalize Dataset:** The final, analysis-ready dataset (`combined_dataset.rds`) was saved to serve as the single source for all subsequent work.
 
 ### Phase 2: Analysis & Infographic Design
