@@ -42,8 +42,6 @@ This phase focused on uncovering the underlying patterns in the data and creatin
     *   **Trend Cards:** Small, focused "trend cards" were designed to summarize the decade-long performance of the most dynamic countries identified in the analysis.
     *   All visualizations were created using R's `ggplot2` package and its ecosystem, with final outputs saved as high-resolution PNG and editable SVG files for maximum flexibility.
 
-**[Link to the Final Infographic PDF](path/to/your/infographic.pdf)**
-
 ### Phase 3: Interactive Application Development & Deployment
 
 The final phase transformed the static analysis into a dynamic, user-driven tool using R Shiny, making the complex data accessible to a wider audience.
