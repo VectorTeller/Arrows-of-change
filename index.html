@@ -9,7 +9,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
             line-height: 1.7;
             color: #333;
-            background-color: #fff; /* White background for the main page */
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
         }
@@ -17,78 +17,149 @@
             max-width: 900px;
             margin: 20px auto;
             padding: 25px 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         h1, h2, h3 {
             color: #2c3e50;
             border-bottom: 1px solid #eaeaef;
             padding-bottom: 10px;
-            margin-top: 2em;
+            margin-top: 2.2em;
         }
         h1 {
             font-size: 2.5em;
             text-align: center;
             border-bottom: 2px solid #3498db;
         }
+        h3 {
+            margin-top: 2.5em;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #eaeaef;
+            margin: 3em 0;
+        }
         code {
-            background-color: #eaeaef; padding: 0.2em 0.4em; margin: 0;
-            font-size: 85%; border-radius: 3px;
+            background-color: #eaeaef;
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            border-radius: 3px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
         }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-        hr { border: 0; height: 1px; background: #eaeaef; margin: 2em 0; }
-        .center-text { text-align: center; }
-
-        /* New styles for the full-width app section */
-        .app-wrapper {
-            width: 100%;
-            padding: 40px 0;
-            background-color: #f8f9fa; /* Light grey background to distinguish the section */
-            margin-top: 30px;
+        ul, ol {
+            padding-left: 25px;
         }
-        .app-wrapper .shiny-app-container {
-            /* Let the container be wide and centered */
-            max-width: 90%; 
-            margin: 0 auto;
+        li {
+            margin-bottom: 10px;
         }
-        .app-wrapper .shiny-app-frame {
-            width: 100%;
-            height: 850px; /* A bit more height is also good */
-            border: 1px solid #ddd;
+        .launch-button-wrapper {
+            text-align: center;
+        }
+        .launch-button {
+            display: inline-block;
+            padding: 18px 35px;
+            margin-top: 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            font-size: 1.25em;
+            font-weight: bold;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .launch-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-<!-- PART 1: The narrow text container -->
 <div class="container">
     <header>
         <h1>Arrows of Change</h1>
-        <p class="center-text"><strong>National Dynamics in Development, Freedom, Political Integrity, and Digital Inclusion (2013–2023)</strong></p>
+        <p style="text-align: center;"><strong>National Dynamics in Development, Freedom, Political Integrity, and Digital Inclusion (2013–2023)</strong></p>
     </header>
     <main>
-        <p>This page details the workflow for an analysis of national development trends over a decade...</p>
+        <p>This page contains the complete workflow for an analysis of national development trends over a decade. The project progresses from raw data collection and cleaning to advanced statistical analysis, the creation of a static infographics, and finally, the deployment of a fully interactive web application.</p>
         <hr>
+        
         <h2>Project Workflow & Methodology</h2>
-        <h3>Phase 1: Data Preparation & Integration</h3>
-        <p>...</p>
-        <h3>Phase 2: Analysis & Infographic Design</h3>
-        <p>...</p>
-        <h3>Phase 3: Interactive Application Development & Deployment</h3>
-        <p>...</p>
-    </main>
-</div>
+        <p>This project was conducted in three main phases, each building upon the last.</p>
 
-<!-- PART 2: The full-width app container -->
-<div class="app-wrapper">
-    <div class="shiny-app-container">
-        <h2 style="text-align: center; border: none;">🚀 Live Demonstration</h2>
-        <p style="text-align: center;">Try the interactive Shiny app below. You can select different countries and years to explore the data for yourself.</p>
-        <iframe class="shiny-app-frame"
-                src="https://vectorvoyager.shinyapps.io/arrows_of_change/">
-        </iframe>
-    </div>
+        <h3>Phase 1: Data Preparation & Integration</h3>
+        <p>The foundation of this analysis is a composite dataset built from four distinct sources. The goal was to create a clean, reliable dataset for robust time-series analysis.</p>
+        <ul>
+            <li><strong>Data Sources:</strong>
+                <ul>
+                    <li><strong>Human Development (HDI):</strong> United Nations Development Programme (UNDP)</li>
+                    <li><strong>Political Integrity (CPI):</strong> Transparency International's Corruption Perception Index</li>
+                    <li><strong>Freedom Scores (Political Rights & Civil Liberties):</strong> Freedom House's "Freedom in the World" report</li>
+                    <li><strong>Digital Inclusion (Internet Access):</strong> The World Bank's World Development Indicators</li>
+                </ul>
+            </li>
+            <li><strong>Data Preparation Steps:</strong>
+                <ol>
+                    <li><strong>Load and Filter Data:</strong> Each dataset was loaded into R and filtered to the <strong>2013-2023</strong> period.</li>
+                    <li><strong>Standardize Country Names:</strong> A custom R function was developed to standardize country names across all datasets. This function used a combination of manual mapping and string detection to <strong>recode</strong> different naming conventions to a single, consistent identifier for each nation, ensuring that each country could be <strong>equally represented</strong>.</li>
+                    <li><strong>Merge with Left Joins:</strong> The standardized datasets were sequentially merged into a master dataframe using the <code>left_join</code> operation from the <code>dplyr</code> package, matching observations by country and year.</li>
+                    <li><strong>Ensure Complete Coverage:</strong> The merged data was then filtered to include <strong>only countries with complete data coverage</strong> for all key indicators across all 11 years.</li>
+                    <li><strong>Finalize Dataset:</strong> The final, analysis-ready dataset (<code>combined_dataset.rds</code>) was saved to serve as the single source for all subsequent work.</li>
+                </ol>
+            </li>
+        </ul>
+
+        <h3>Phase 2: Analysis & Infographic Design</h3>
+        <p>This phase focused on uncovering the underlying patterns in the data and creating high-impact static visualizations suitable for reports and presentations.</p>
+        <ul>
+            <li><strong>Methodology: Principal Component Analysis (PCA)</strong>
+                <ul>
+                    <li>To understand the complex relationships between the four correlated indicators, PCA was applied. This statistical technique reduces the dimensionality of the data, summarizing the four variables into two new, synthetic axes (Principal Components) that collectively explain over 90 % of the original variance.</li>
+                    <li><strong>PC1 (Horizontal Axis):</strong> Was interpreted as an "Overall Development & Openness" index. A high score indicates high human development, low corruption, and high freedom.</li>
+                    <li><strong>PC2 (Vertical Axis):</strong> Was interpreted as a "Developmental Emphasis" index, contrasting institutional strength with economic/technological focus.</li>
+                </ul>
+            </li>
+            <li><strong>Infographic Creation with <code>ggplot2</code>:</strong>
+                <ul>
+                    <li><strong>Main PCA Plot:</strong> The core visualization is a highly customized scatter plot that maps each country's developmental trajectory from 2013 to 2023 as an arrow. A custom bivariate color scale was designed for the background to visually define the four quadrants of the PCA space, with each quadrant annotated with a descriptive title.</li>
+                    <li><strong>Gauge Plots:</strong> Four circular gauge plots were created to visualize the global shift in the distribution of countries across different development categories between 2013 and 2023.</li>
+                    <li><strong>Trend Cards:</strong> Small, focused "trend cards" were designed to summarize the decade-long performance of the most dynamic countries identified in the analysis.</li>
+                    <li>All visualizations were created using R's <code>ggplot2</code> package and its ecosystem, with final outputs saved as high-resolution PNG and editable SVG files for maximum flexibility.</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>Phase 3: Interactive Application Development & Deployment</h3>
+        <p>The final phase transformed the static analysis into a dynamic, user-driven tool using R Shiny, making the complex data accessible to a wider audience.</p>
+        <ul>
+            <li><strong>How the Shiny App is Built (The Three-File Structure):</strong> A Shiny app is best organized into three separate files. This structure separates the app's core functions, making it efficient and easy to manage.
+                <ul>
+                    <li><strong><code>global.R</code> (The Brains):</strong> This script runs only <strong>once</strong> when the app starts. It loads all necessary libraries and performs all the heavy data preparation and PCA calculations. This makes the app fast for the user, as the complex work is done upfront.</li>
+                    <li><strong><code>ui.R</code> (The Face):</strong> This script defines the User Interface—the layout, sidebar, tabs, buttons, and titles. It controls what the user sees and interacts with.</li>
+                    <li><strong><code>server.R</code> (The Engine):</strong> This script contains the instructions to build the plots and tables. It runs <em>reactively</em>, meaning it listens for user input (like selecting a new country) and instantly redraws the outputs based on that input.</li>
+                </ul>
+            </li>
+            <li><strong>Deployment: From the Cloud to the Web</strong>
+                <ul>
+                    <li>To ensure a stable and reproducible development environment, this project was developed in <strong>Posit Cloud</strong>. This cloud-based version of RStudio avoids issues related to local machine configurations (like operating system differences).</li>
+                    <li>To make the app publicly available, the Posit Cloud project was <strong>connected to a `shinyapps.io` account</strong>. The <code>rsconnect</code> R package was used to bundle the application files (<code>global.R</code>, <code>ui.R`, `server.R</code>, and the <code>data</code> folder) and deploy them to the <code>shinyapps.io</code> hosting service, which generated the permanent public web link.</li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+
+        <div class="launch-button-wrapper">
+            <h2>🚀 Live Demonstration</h2>
+            <p>Click the button below to launch the full-screen interactive application in a new tab.</p>
+            
+            <a href="https://vectorvoyager.shinyapps.io/arrows_of_change/" class="launch-button" target="_blank">
+                Launch Interactive App
+            </a>
+        </div>
+    </main>
 </div>
 
 </body>
