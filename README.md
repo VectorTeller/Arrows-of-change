@@ -66,5 +66,5 @@ The final phase transformed the static analysis into a dynamic, user-driven tool
 
 
 Try the interactive Shiny app here:  
-👉 **[Click here](https://vectorvoyager.shinyapps.io/arrows_of_change/)**
+👉 **[Click here](https://vectorvoyager.shinyapps.io/Arrows-of-Change/)**
 
