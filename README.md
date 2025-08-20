@@ -48,9 +48,9 @@ The final phase transformed the static analysis into a dynamic, user-driven tool
 
 *   **How the Shiny App is Built (The Three-File Structure):**
     *   A Shiny app is best organized into three separate files. This structure separates the app's core functions, making it efficient and easy to manage.
-        *   **`global.R` (The Brains):** This script runs only **once** when the app starts. It loads all necessary libraries and performs all the heavy data preparation and PCA calculations. This makes the app fast for the user, as the complex work is done upfront.
-        *   **`ui.R` (The Face):** This script defines the User Interface—the layout, sidebar, tabs, buttons, and titles. It controls what the user sees and interacts with.
-        *   **`server.R` (The Engine):** This script contains the instructions to build the plots and tables. It runs *reactively*, meaning it listens for user input (like selecting a new country) and instantly redraws the outputs based on that input.
+        *   **`global.R`:** This script runs only **once** when the app starts. It loads all necessary libraries and performs all the heavy data preparation and PCA calculations. This makes the app fast for the user, as the complex work is done upfront.
+        *   **`ui.R`:** This script defines the User Interface—the layout, sidebar, tabs, buttons, and titles. It controls what the user sees and interacts with.
+        *   **`server.R`:** This script contains the instructions to build the plots and tables. It runs *reactively*, meaning it listens for user input (like selecting a new country) and instantly redraws the outputs based on that input.
 
 *   **Deployment: From the Cloud to the Web**
     *   To ensure a stable and reproducible development environment, this project was developed in **Posit Cloud**. This cloud-based version of RStudio avoids issues related to local machine configurations (like operating system differences).
